@@ -15,6 +15,7 @@ const ProductPage = () => {
     <section>
       <h1>Product page: {product?.id}</h1>
       <p>{product?.name}</p>
+      <p>{product?.price}</p>
     </section>
   )
 }
