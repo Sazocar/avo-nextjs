@@ -1,17 +1,22 @@
-import React from 'react'
 import Link from 'next/link'
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav>
-      <menu>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </menu>
+      <ul>
+        <li>
+          <Link href="/" legacyBehavior>
+            <a>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about" legacyBehavior>
+            <a>About</a>
+          </Link>
+        </li>
+      </ul>
     </nav>
   )
 }
+
+export default Navbar
