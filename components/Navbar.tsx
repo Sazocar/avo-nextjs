@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import styles from './navbar.module.css'
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={styles.nav_container}>
       <ul>
         <li>
           <Link href="/" legacyBehavior>
