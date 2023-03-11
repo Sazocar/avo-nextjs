@@ -8,20 +8,25 @@ type ProductListProps = {
 
 const mapProductsToCards = (products: TProduct[]) =>
   products.map(({ name, id, price, image }) => (
-    <Link key={id} href="/product/[id]" as={`/product/${id}`} passHref>
+    <Link
+      key={id}
+      href="/product/[id]"
+      as={`/product/${id}`}
+      passHref
+      legacyBehavior
+    >
       <Card
         as="a"
         header={name}
         image={image}
         meta={<Card.Meta style={{ color: 'dimgray' }}>{price}</Card.Meta>}
+        style={{ width: '230px', height: 'auto' }}
       />
     </Link>
   ))
 
 const ProductList = ({ products }: ProductListProps) => (
-  <Card.Group itemsPerRow={2} stackable>
-    {mapProductsToCards(products)}
-  </Card.Group>
+  <Card.Group centered doubling>{mapProductsToCards(products)}</Card.Group>
 )
 
 export default ProductList

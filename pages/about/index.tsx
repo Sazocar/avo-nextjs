@@ -38,7 +38,14 @@ const AboutPage = () => {
           13 Surprising Facts About Avocados
         </Header>
         <figure>
-          <Image src="/images/avocados.jpg" alt="Avocados on a table" />
+          <Image
+            size='huge'
+            centered
+            bordered
+            rounded
+            src="/images/avocados.jpg"
+            alt="Avocados on a table"
+          />
           <figcaption>
             Originally from{' '}
             <a
@@ -63,7 +70,6 @@ const AboutPage = () => {
         figure,
         ol {
           padding: 0;
-          margin: 0;
         }
 
         figure {
@@ -77,6 +83,7 @@ const AboutPage = () => {
         }
 
         ol {
+          padding: 50px 30px;
           list-style: none;
 
           // Look ma! Responsive grid with no Media queries :)
@@ -104,6 +111,7 @@ const AboutPage = () => {
 
         li {
           position: relative;
+          margin: 12px 0px;
         }
         h3:first-child {
           // why the first-child selector you may ask...

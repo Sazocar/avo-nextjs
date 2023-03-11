@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Item, Button, Loader, Message } from 'semantic-ui-react'
+import { Item, Button, Loader, Message, Container } from 'semantic-ui-react'
 import { CartItemType } from '@store/Cart'
 
 type CartItemListProps = {
@@ -18,12 +18,14 @@ const CartItemList = ({
 
   if (items.length === 0)
     return (
-      <Message warning as="section">
-        <Message.Header>Your cart is empty</Message.Header>
-        <p>
-          You will need to add some items to the cart before you can checkout.
-        </p>
-      </Message>
+      <Container>
+        <Message warning as="section">
+          <Message.Header>Your cart is empty</Message.Header>
+          <p>
+            You will need to add some items to the cart before you can checkout.
+          </p>
+        </Message>
+      </Container>
     )
 
   const mapCartItemsToItems = (items: CartItemType[]) =>
@@ -33,7 +35,12 @@ const CartItemList = ({
       return {
         childKey: id,
         header: (
-          <Link href="/product/[id]" as={`/product/${id}/`} passHref>
+          <Link
+            href="/product/[id]"
+            as={`/product/${id}/`}
+            passHref
+            legacyBehavior
+          >
             <Item.Header as="a">{name}</Item.Header>
           </Link>
         ),
@@ -58,7 +65,7 @@ const CartItemList = ({
       }
     })
 
-  return <Item.Group divided items={mapCartItemsToItems(items)} as="section" />
+  return <Item.Group unstackable divided items={mapCartItemsToItems(items)} as="section" />
 }
 
 export default CartItemList

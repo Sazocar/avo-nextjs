@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Button } from 'semantic-ui-react'
+import { Segment, Button, Container } from 'semantic-ui-react'
 
 type CartSummaryProps = {
   totalAmount: number
@@ -7,15 +7,17 @@ type CartSummaryProps = {
 
 const CartSummary = ({ totalAmount }: CartSummaryProps) => {
   return (
-    <Segment clearing size="large" as="section">
-      <span>
-        <strong>Sub total:</strong>
-        {` ${totalAmount}`}
-      </span>
-      <Button color="black" floated="right">
-        Check out
-      </Button>
-    </Segment>
+    <Container>
+      <Segment clearing as="section" size='large'>
+        <span>
+          <strong>Sub total:</strong>
+          {` ${totalAmount}`}
+        </span>
+        <Button color="black" floated="right" size='large'>
+          Check out
+        </Button>
+      </Segment>
+    </Container>
   )
 }
 

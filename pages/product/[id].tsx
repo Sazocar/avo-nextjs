@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 
 import Layout from '@components/Layout/Layout'
 import ProductSummary from '@components/ProductSummary/ProductSummary'
+import { Container } from 'semantic-ui-react'
+import Navbar from '@components/Navbar/Navbar'
 
 const ProductPage = () => {
   const { query } = useRouter()
@@ -21,7 +23,9 @@ const ProductPage = () => {
 
   return (
     <Layout>
-      {product == null ? null : <ProductSummary product={product} />}
+      <Container text>
+        {product == null ? null : <ProductSummary product={product} />}
+      </Container>
     </Layout>
   )
 }
