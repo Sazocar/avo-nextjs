@@ -38,21 +38,32 @@ const Footer = () => (
           <Grid.Column width={7}>
             <Header as="h4">Hecho para</Header>
             <p>
-              <a href="https://platzi.com/">Platzi y su curso de Next.JS</a> de
-              Platzi dictado por{' '}
-              <a href="https://twitter.com/jonalvarezz">@jonalvarezz</a>
+              <a href="https://platzi.com/" target="__blank">
+                Platzi y su curso de Next.JS
+              </a>{' '}
+              de Platzi dictado por{' '}
+              <a href="https://twitter.com/jonalvarezz" target="__blank">
+                @jonalvarezz
+              </a>
             </p>
             <List horizontal style={{ display: 'flex' }}>
               <List.Item
                 icon="twitter"
                 style={{ display: 'flex' }}
-                content={<a href="https://twitter.com/jonalvarezz">Twitter</a>}
+                content={
+                  <a href="https://twitter.com/jonalvarezz" target="__blank">
+                    Twitter
+                  </a>
+                }
               />
               <List.Item
                 icon="github"
                 style={{ display: 'flex' }}
                 content={
-                  <a href="https://github.com/jonalvarezz/platzi-nextjs">
+                  <a
+                    href="https://github.com/jonalvarezz/platzi-nextjs"
+                    target="__blank"
+                  >
                     GitHub
                   </a>
                 }

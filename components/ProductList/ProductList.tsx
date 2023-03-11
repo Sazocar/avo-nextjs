@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Card, Grid } from 'semantic-ui-react'
 import Link from 'next/link'
 
 type ProductListProps = {
@@ -26,7 +26,13 @@ const mapProductsToCards = (products: TProduct[]) =>
   ))
 
 const ProductList = ({ products }: ProductListProps) => (
-  <Card.Group centered doubling>{mapProductsToCards(products)}</Card.Group>
+  <Card.Group
+    style={{ gap: '0px 30px', margin: '12px' }}
+    centered
+    doubling
+  >
+    {mapProductsToCards(products)}
+  </Card.Group>
 )
 
 export default ProductList

@@ -67,8 +67,7 @@ const AboutPage = () => {
       </section>
 
       <style jsx>{`
-        figure,
-        ol {
+        figure {
           padding: 0;
         }
 
@@ -83,7 +82,7 @@ const AboutPage = () => {
         }
 
         ol {
-          padding: 50px 30px;
+          padding: 50px 30px 0px 30px;
           list-style: none;
 
           // Look ma! Responsive grid with no Media queries :)
