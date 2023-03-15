@@ -7,13 +7,13 @@ type CartSummaryProps = {
 
 const CartSummary = ({ totalAmount }: CartSummaryProps) => {
   return (
-    <Container>
-      <Segment clearing as="section" size='large'>
+    <Container text>
+      <Segment clearing as="section" size="large">
         <span>
           <strong>Sub total:</strong>
-          {` ${totalAmount}`}
+          {` $ ${totalAmount.toFixed(2)}`}
         </span>
-        <Button color="black" floated="right" size='large'>
+        <Button color="black" floated="right" size="large">
           Check out
         </Button>
       </Segment>

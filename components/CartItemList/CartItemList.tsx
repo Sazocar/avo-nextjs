@@ -65,7 +65,16 @@ const CartItemList = ({
       }
     })
 
-  return <Item.Group unstackable divided items={mapCartItemsToItems(items)} as="section" />
+  return (
+    <Container text>
+      <Item.Group
+        unstackable
+        divided
+        items={mapCartItemsToItems(items)}
+        as="section"
+      />
+    </Container>
+  )
 }
 
 export default CartItemList
