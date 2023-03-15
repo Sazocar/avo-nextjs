@@ -1,22 +1,47 @@
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import fetch from 'isomorphic-unfetch'
+import { GetStaticProps } from 'next';
+import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
+import { Container } from 'semantic-ui-react'
 
-const ProductPage = () => {
-  const [product, setProduct] = useState<TProduct>()
-  const { query: { id } } = useRouter()
+export const getStaticPaths = async () => {
+  const response = await fetch('https://platzi-avo.vercel.app/api/avo')
+  const { data: productList }: TAPIAvoResponse = await response.json()
 
-  useEffect(() => {
-    window.fetch(`/api/avo/${id}`)
-      .then(response => response.json())
-      .then(data => setProduct(data))
-  })
+  const paths = productList.map(({ id }) => ({
+    params: {
+      id
+    }
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id as string
+  const response = await fetch(`https://platzi-avo.vercel.app/api/avo/${id}`)
+  const product: TProduct = await response.json()
+
+  return {
+    props: {
+      product,
+    },
+  }
+}
+
+const ProductPage = ({ product } : { product: TProduct }) => {
+  
 
   return (
-    <section>
-      <h1>Product page: {product?.id}</h1>
-      <p>{product?.name}</p>
-      <p>{product?.price}</p>
-    </section>
+    <Layout>
+      <Container text>
+        {product == null ? null : <ProductSummary product={product} />}
+      </Container>
+    </Layout>
   )
 }
 
