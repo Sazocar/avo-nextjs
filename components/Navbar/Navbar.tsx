@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link href="/" passHref legacyBehavior>
           <Menu.Item
             active={pathname === '/'}
-            title="Inicio | Todos los productos"
+            title="Home | All products"
           >
             <Avocado />
             Avo Store
@@ -26,7 +26,7 @@ const Navbar = () => {
         <Menu.Menu position="right">
           <Link href="/cart" passHref legacyBehavior>
             <Menu.Item active={pathname === '/cart'}>
-              <ShoppingCartIcon cartCount={cartCount} name="Canasta" />
+              <ShoppingCartIcon cartCount={cartCount} name="Basket" />
             </Menu.Item>
           </Link>
         </Menu.Menu>

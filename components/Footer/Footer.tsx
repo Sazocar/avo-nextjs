@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Segment, Container, Grid, List, Header } from 'semantic-ui-react'
+import { Segment, Container, Grid, List, Header, Icon } from 'semantic-ui-react'
 
 const Footer = () => (
   <Segment
@@ -16,43 +16,47 @@ const Footer = () => (
       <Grid stackable>
         <Grid.Row>
           <Grid.Column width={4}>
-            <Header as="h4" content="Nosotros" />
+            <Header as="h4" content="About us" />
             <List>
               <List.Item>
                 <Link href="/about" legacyBehavior>
-                  <a>Conoce más</a>
+                  <a>More info</a>
                 </Link>
               </List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={5}>
-            <Header as="h4" content="Servicios" />
+            <Header as="h4" content="Powered by" />
             <List>
               <List.Item>
-                <Link href="/" legacyBehavior>
-                  <a>Todos los productos</a>
-                </Link>
+                <a
+                  target="__blank"
+                  href="https://platzi-avo.vercel.app/api/avo"
+                >
+                  Platzi Avo API
+                </a>
               </List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={7}>
-            <Header as="h4">Hecho para</Header>
+            <Header as="h4">About this page</Header>
             <p>
-              <a href="https://platzi.com/" target="__blank">
-                Platzi y su curso de Next.JS
+              Made it with{' '}
+              <a target="_blank" href="https://nextjs.org/">
+                NextJS
               </a>{' '}
-              de Platzi dictado por{' '}
-              <a href="https://twitter.com/jonalvarezz" target="__blank">
-                @jonalvarezz
-              </a>
+              and TS
             </p>
             <List horizontal style={{ display: 'flex' }}>
               <List.Item
-                icon="twitter"
+                icon="code"
                 style={{ display: 'flex' }}
                 content={
-                  <a href="https://twitter.com/jonalvarezz" target="__blank">
-                    Twitter
+                  <a
+                    href="https://sazocar.github.io/profile-card/"
+                    target="__blank"
+                  >
+                    Sazocar
                   </a>
                 }
               />
@@ -61,7 +65,7 @@ const Footer = () => (
                 style={{ display: 'flex' }}
                 content={
                   <a
-                    href="https://github.com/jonalvarezz/platzi-nextjs"
+                    href="https://github.com/Sazocar/avo-nextjs"
                     target="__blank"
                   >
                     GitHub

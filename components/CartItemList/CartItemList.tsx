@@ -49,7 +49,6 @@ const CartItemList = ({
             src={image}
             alt={name}
             size="small"
-            style={{ background: '#f2f2f2' }}
           />
         ),
         meta: `${quantity} x ${price}`,
