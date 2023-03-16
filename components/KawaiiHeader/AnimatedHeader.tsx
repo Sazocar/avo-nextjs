@@ -6,13 +6,11 @@ import { Avocado } from '@components/SVGIcons'
 type AnimatedHeaderProps = {
   visible: boolean
   onClick: () => void
-  onComplete: () => void
 }
 
 const AnimatedHeader = ({
   visible,
   onClick,
-  onComplete,
 }: AnimatedHeaderProps) => (
   <Header size="huge" as="h1" onClick={onClick}>
     Platzi
@@ -20,7 +18,6 @@ const AnimatedHeader = ({
       animation="jiggle"
       visible={visible}
       duration={900}
-      onComplete={onComplete}
     >
       <Avocado size="58px" />
     </Transition>
