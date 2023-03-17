@@ -67,6 +67,7 @@ const AddToCart = ({ product }: AddToCartProps) => {
         step={1}
         error={!!error}
         onChange={handleChange}
+        size='small'
         action={{
           color: 'green',
           content: 'Add to Cart',
